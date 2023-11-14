@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML | Link</title>
+</head>
+<body>
+    <h1>Link</h1>
+    <h2>target</h2>
+    <a href="./" target="_self">인덱스 현재탭에서 열기</a>
+    <a href="./" target="_blank">인덱스 새탭에서 열기</a>
+
+    <h2>Image Link</h2>
+    <a href="./">
+        <img src="../sample/image/hyunta.jpg" width="150px"  alt="">
+    </a>
+
+    <!-- 이미지 안의 링크 분할 -->
+    <img src="../sample/image/img1.jpg" width="200px"  alt="" usemap="#imgmap">
+    <map name="imgmap">
+        <!--
+            area
+                shape 영역 모양 rect | circle | poly 
+                coods 좌표 x1, y1, x2, y2
+                href 링크
+                alt
+                target 
+            https://www.image-map.net/  이미지 쉽게 생성하는 사이트
+        -->
+        <area shape="rect" coords="0,0, 100,200" href="https://naver.com" alt="네이버 가기">
+        <area shape="rect" coords="100,0, 200,200" href="https://google.com" alt="구글 가기">
+    </map>
+
+    <h2>Bookmark (anchor)</h2>
+    <div>
+        <ul>
+            <li><a href="#content1">내용1</a></li>
+            <li><a href="#content2">내용2</a></li>
+            <li><a href="#content3">내용3</a></li>
+            <li><a href="#:~:text=sit amet consectetur adipisicing elit.">하이라이팅 북마크</a></li>
+        </ul>
+    </div>
+    <!-- div>h3+(p>lorem)*2 -->
+    <div>
+        <h3 id="content1">내용1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+    </div>
+    <div>
+        <h3 id="content2">내용2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+    </div>
+    <div>
+        <h3 id="content3">내용3</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolore quisquam praesentium voluptatibus incidunt quo quas maiores odit distinctio aspernatur quaerat suscipit delectus consectetur maxime, laboriosam reiciendis voluptate porro similique!</p>
+        <p>Eum, nostrum voluptas natus ex dolore exercitationem quam aspernatur, architecto, quo eos deserunt dicta recusandae! Quod ad totam amet voluptatem molestias, officiis dolorum culpa ab maiores quia eos voluptate aut?</p>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div>
+        <ul>
+            <li><a href="#content1">내용1</a></li>
+            <li><a href="#content2">내용2</a></li>
+            <li><a href="#content3">내용3</a></li>
+            <li><a href="#top">맨위로</a></li>
+        </ul>
+    </div>
+</body>
+</html>

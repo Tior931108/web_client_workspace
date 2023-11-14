@@ -24,7 +24,7 @@
     <h6>Helloworld</h6>
 
     <!-- 문단 태그 -->
-    <!-- 개행문자/탭문자/공백문자는 모두 공백1로 처리된다. -->
+    <!-- 개행문자/탭문자/공백문자는 그룹지어 공백 하나로 처리된다. -->
     <p>
         안녕하세요. 반갑습니다. 
         날씨가 춥죠?
@@ -33,6 +33,21 @@
         안녕하세요. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;반갑습니다. <br/>
         날씨가 춥죠? <br/>
     </p>
+
+    <!-- pre 태그 -->
+    <!-- pre-formatted 개행/탭/공백을 모두 그대로 출력-->
+    <pre style="font-family: 'Courier New', Courier, monospace;">
+        안녕하세요.                              반갑습니다. 
+        날씨가 춥죠?
+    </pre>
+    <!-- pre>code 부모>자식 -->
+    <pre>
+        <code>
+            function foo() {
+                console.log('foo');
+            }
+        </code>
+    </pre>
 
     <!-- 특수문자 표현 &문자 -->
     <!-- http://kor.pe.kr/util/4/charmap2.htm -->
