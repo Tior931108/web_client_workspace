@@ -9,11 +9,11 @@
     <h1>Form</h1>
     <!-- 사용자 입력값을 서버로 전송하기 위한 form과 input 태그등을 제공 -->
     <!-- 
-        name 폼의 이름
+        name 폼의 이름(서버전송되지 않음. 페이지내 구분용)
         action 제출할 서버주소 (url)
         method (http메시지를 작성하는방법)
-            -get (기본값) : 사용자입력값을 url에 query-string 형식으로 전달
-            -post : 사용자입력값을 http메시지 바디에 작성 (url 확인 불가)
+            -get (기본값) : 사용자입력값을 url에 query-string 형식(직렬화)으로 전달
+            -post : 사용자입력값을 http메시지 바디(직렬화)에 작성 (url 확인 불가)
 
         **query-string 작성시 key=value 형식에 사용된 key값은 name 속성값이다.**
         **form 하위 input태그는 name 속성을 반드시 가지고 있어야 한다.**
@@ -72,6 +72,14 @@
             <!-- 숫자키패드 제공-->
             <input type="tel" name="memberTel" id="memberTel">
             <br>
+
+            <label for="memo">메모</label>
+            <textarea name="memo" id="memo" cols="5" rows="5">a
+b
+c
+d</textarea>
+            <br>
+
         </fieldset>
 
         <input type="submit" value="제출" placeholder="검색어를 입력하세요...">
@@ -98,6 +106,8 @@
 
     <form action="">
         <fieldset>
+            <!-- ISO 8601 표준 날짜/시간-->
+
             <legend>날짜/시간관련 input</legend>
             <label for="someday">날짜</label>
             <input 
