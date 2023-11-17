@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀간격 및 셀여백주기</title>
+<!-- 
+   이클립스 (Eclipse)에서 다음과 같은 HTML 코드에 대해
+  <table border="1" cellspacing="10" cellpadding="20">
+ 
+    cellspacing : 셀과 셀사이의 간격
+    cellpadding : 셀테두리와 셀속에 들어있는 내용물 사이의 간격(셀여백)
+
+	다음과 같은 경고에 직면할 수 있다.
+
+	Attribute (cellspacing) is obsolete. Its use is discouraged in HTML5 documents.
+	Attribute (cellpadding) is obsolete. Its use is discouraged in HTML5 documents.
+
+    HTML5에서는 table 속성으로 cellspacing과 cellpadding 없어졌기 때문이다.
+     다음과 같이 CSS로 표현할 수 있다. 
+-->
+<style type="text/css">
+	table {
+		border:8px solid black; 
+		/* border:선두께 선모양 선색상;
+		- 선모양(none, dotted, dashed, solid, double, groove, ridge, inset, outset)은 
+				반드시 명시를 해주어야만 한다. 선모양을 명시해주지 않으면 선이 안보여진다.
+		- 선색상은 색상이름이나 색상코드로 표기한다. */
+	    border-spacing:10px;  /* 셀과 셀사이의 간격 cellspacing을 대체함*/
+	}
+
+	table td, table th {
+	    border:1px solid black; 
+    	padding:20px; 		/* 셀테두리와 셀속에 들어있는 내용물 사이의 간격(셀여백) - cellpadding을 대체함 */
+	}
+</style>
+
+</head>
+
+<body>
+<!-- table속성에 지정하는 cellpadding, cellspacing같은 경우 html5에서 지원하지 않으므로, css로 해결해야함. -->
+<!-- <table border="1" cellspacing="10px" cellpadding="10px"> -->
+<table>
+<thead>
+	<tr>
+		<th colspan="5">하수정 보석 컬렉션</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th rowspan="5">제품리스트</th>
+		<th>코드</th>
+		<th>분류</th>
+		<th>가격</th>
+		<th>구매가능 개수</th>
+	</tr>
+	<tr>
+		<td>01-468</td>
+		<td>가을</td>
+		<td>200,000원</td>
+		<td>1068</td>
+	</tr>
+	<tr>
+		<td>01-469</td>
+		<td>가을</td>
+		<td>150,000원</td>
+		<td>1700</td>
+	</tr>
+	<tr>
+		<td>01-470</td>
+		<td>여름</td>
+		<td>950,000원</td>
+		<td>2500</td>
+	</tr>
+	<tr>
+		<td>01-471</td>
+		<td>봄</td>
+		<td>120,000원</td>
+		<td>3200</td>
+	</tr>
+</tbody>
+</table>
+
+</body>
+</html>

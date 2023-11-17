@@ -1,65 +1,60 @@
 ul.menu {
-    width: 80vw; /* viewport 기준 너비*/
-    padding: 0;
-    margin: 0 auto;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  width: 80vw;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 ul.menu li {
-    width: 8em;
-    height: 2.5em;
-    background-color: #c9c9c9;
-    border-right: 1px solid #818181;
-    text-align: center;
+  width: 8em;
+  height: 2.5em;
+  background-color: #c9c9c9;
+  border-right: 1px solid #818181;
+  text-align: center;
 
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 ul.menu > li:first-child {
-    border-top-left-radius: .5em;
-    border-bottom-left-radius: .5em;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
 }
-
 ul.menu > li:last-child {
-    border-top-right-radius: .5em;
-    border-bottom-right-radius: .5em;
-    border-right: 0;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
+  border-right: 0;
 }
-
-
-
 ul.menu li a {
-    display: block;
-    padding: .5em;
-    text-decoration: none;
-    color: #292929;
+  display: block;
+  padding: .5em;
+  text-decoration: none;
+  color: #292929;
 }
-
 ul.menu li:hover {
-    background-color: #333;
+  background-color: #333;
 }
 ul.menu li:hover > a {
-    color: #fff;
+  color: #fff;
 }
 
 /* 서브메뉴 */
 ul.menu ul {
-    display: none;
-    padding-left: 0;
-    margin-top: 3px;
+  display: none;
+  padding-left: 0;
+  margin-top: 3px;
 }
 ul.menu li:hover ul {
-    display: block;
+  display: block;
 }
 ul.menu ul > li {
-    border-right: 0;
+  border-right: 0;
 }
 ul.menu ul > li:not(:last-child) {
-    border-bottom: 1px solid #818181;
+  border-bottom: 1px solid #818181;
 }

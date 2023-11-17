@@ -1,16 +1,15 @@
 table {
-    border: 1px solid #000;
-    border-collapse: collapse;
-    caption-side: bottom;
-    width: 500px;
-    table-layout: fixed; /* 테이블 너비 고정 */
-    height: 500px;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  caption-side: bottom;
+  width: 500px;
+  table-layout: fixed; /* 테이블 너비고정 */
+  height: 500px;
 }
-
 th, td {
-    border: 1px solid #000;
-    padding: 10px 5px;
-    text-align: center;
-    /* display: table-cell; */
-    vertical-align: middle; /*table-cell 에서만 작동*/
+  border: 1px solid #000;
+  padding: 10px 5px; 
+  text-align: center;
+  /* display: table-cell; */
+  vertical-align: middle; /* table-cell에서만 작동 */
 }

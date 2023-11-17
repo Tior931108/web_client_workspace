@@ -1,33 +1,31 @@
 .parent {
-    background-color: bisque;
-    text-align: right;
+  background-color: bisque;
+  text-align: right;
 }
-
 .parent span {
-    background-color: hotpink;
+  background-color: hotpink; 
 }
 .box {
-    width:200px;
-    height:200px;
-    border: 2px solid #000; /* #rrggbb #rgb */
-    /*center 위 아래 좌우*/
-    /* margin: 0 auto;  */
-    /* right */
-    /* margin-left: auto; */
-    /* left */
-    /* margin-right: auto; */
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000; /* #rrggbb #rgb */
+  /* center 위아래 좌우 */
+  margin: 0 auto;
+  /* right */
+  /* margin-left: auto; */
+  /* left */
+  /* margin-right: auto; */
 }
-.item{
-    width: 200px;
-    height: 200px;
-    background-color: azure;
-    border: 2px solid #000;
-    margin: 0 auto;
-    /* text-align: center; */
+.item {
+  width: 150px;
+  height: 150px;
+  background-color: aquamarine;
+  border: 2px solid #000;
+  margin: 0 auto;
+  /* text-align: center; */
 
-    /* 가운데(상하좌우) 정렬 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* 가운데(상하좌우) 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-

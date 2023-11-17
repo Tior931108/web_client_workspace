@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS | Layout - Table</title>
-    <link rel="stylesheet" href="css/11_layout_table.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS | Layout - Table</title>
+  <link rel="stylesheet" href="css/11_layout_table.css">
 </head>
 <body>
-    <h2>Table</h2>
-    <table>
-        <caption>웹 브라우저표</caption>
-        <thead>
-            <tr>
-                <th>브라우저명</th>
-                <th>제조사</th>
-                <th>홈페이지</th>
-            </tr>
-        </thead>
-        <!-- tbody>(tr>td*3)*3 -->
-        <!-- Ctrl + Shift + c : live server 에서 원하는 곳 호버하여 개발자 도구 확인 가능-->
-        <tbody>
-            <tr>
-                <td>Edge</td>
-                <td>MS</td>
-                <td><a href="https://microsoft.com">https://microsoft.com</a></td>
-            </tr>
-            <tr>
-                <td>Chrome</td>
-                <td>google</td>
-                <td><a href="https://google.com">https://google.com</a></td>
-            </tr>
-            <tr>
-                <td>Safari</td>
-                <td>Apple</td>
-                <td><a href="https://apple.com">https://apple.com</a></td>
-            </tr>
-            <!-- td[colspan=3]>lorem -->
-            <td colspan="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa hic, explicabo cum odit dolorum possimus deleniti commodi, omnis expedita ratione labore tempora quod sapiente rerum excepturi voluptate totam, sint ipsam?</td>
-        </tbody>
-        <!-- tfoot>tr>th*2 -->
-        <tfoot>
-            <tr>
-                <th>총개수</th>
-                <th colspan="2">3</th>
-            </tr>
-        </tfoot>
-    </table>
+  <h1>Table</h1>
+  <table>
+    <caption>웹브라우져 표</caption>
+    <thead>
+      <tr>
+        <th>브라우져명</th>
+        <th>제조사</th>
+        <th>홈페이지</th>
+      </tr>
+    </thead>
+    <!-- tbody>(tr>td*3)*3 -->
+    <tbody>
+      <tr>
+        <td>Edge</td>
+        <td>MS</td>
+        <td><a href="https://microsoft.com">https://microsoft.com</a></td>
+      </tr>
+      <tr>
+        <td>Chrome</td>
+        <td>Google</td>
+        <td><a href="https://google.com">https://google.com</a></td>
+      </tr>
+      <tr>
+        <td>Safari</td>
+        <td>Apple</td>
+        <td><a href="https://apple.com">https://apple.com</a></td>
+      </tr>
+      <tr>
+        <!-- td[colspan=3]>lorem -->
+        <td colspan="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut tempora excepturi explicabo optio temporibus maxime iure sequi sit soluta blanditiis ex, error velit eum, nulla quia officiis autem ipsum labore?</td>
+      </tr>
+    </tbody>
+    <!-- tfoot>tr>th*2 -->
+    <tfoot>
+      <tr>
+        <th>총개수</th>
+        <th colspan="2">3</th>
+      </tr>
+    </tfoot>
+  </table>
+
+
+
+
 </body>
 </html>
