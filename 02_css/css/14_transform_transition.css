@@ -1,0 +1,100 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper img {
+    width: 300px;
+    margin: 50px 0;
+}
+
+/* 요소이동 translate(x, y) */
+/* position 값 변경없이 요소 이동 가능 */
+.wrapper img:first-child:hover {
+    transform: translate(-100px, 100px);
+}
+/* 확장/축소 scale(n) */
+.wrapper img:nth-child(2):hover {
+    transform: scale(0.7);
+}
+/* 회전 rotate(n deg) */
+.wrapper img:last-child:hover {
+    transform: rotate(-90deg);
+}
+
+/* transition */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    border: 2px solid #000;
+
+    /* transition-duration: 1s; */
+    /* all 기본값*/
+    /* transition-property: width, height; */
+    /* transition-delay: .5s; */
+    /* transition-timing-function: ease-out; */
+
+    /* transition: property duration timing-function delay; */
+    transition: all 1s ease-out .5s;
+}
+
+.box:hover {
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+}
+
+/* 트랜지션이 적용된 게시글 카드 */
+.card {
+    display: inline-block;
+    width: 380px;
+    height: 380px;
+    margin: 10px;
+    padding: 30px;
+    background-color:  #99aeff;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    box-shadow: 0 35px 77px -17px rgba(0,0,0, .4);
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.card h1 {
+    font-weight: 300;
+    text-shadow: 2px 2px 10px rgba(0,0,0, .3);
+}
+
+.card h2 {
+    font-weight: 300;
+    margin-top: 20px;
+    font-style: italic;
+    transform: translate(-280px, 0);
+    opacity: .7; 
+}
+
+.card p {
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 24px;
+    transform: translate(380px, 0);
+    transition-delay: .1s;
+    opacity: .5;
+}
+
+.transition {
+    transition-duration: .5s;
+}
+
+.card:hover {
+    box-shadow: 0 35px 77px -17px rgba(0,0,0, .8);
+}
+
+.card:hover .transition {
+    transform: translate(0, 0);
+    opacity: 1;
+    font-weight: 700;
+}
+
