@@ -185,3 +185,99 @@ function test6() {
     console.log(alpha.toString()); // 문자열로 반환 a,k,l,M,x,y,c,d,e 
 
 }
+
+/**
+ * forEach(callbackFunction)
+ * - callbackFunction 함수를 함수에 전달하면, 내부적으로 호출해 사용.
+ * - 단순반복처리 
+ * - 요소별로 callbackFunction 호출
+ */
+function test7() {
+    const arr = ['a', 'b', 'c', 'd', 'e'];
+
+    arr.forEach(function(ch, index, _arr) { // 요소, 인덱스, 원본배열
+        console.log(ch, index, _arr);
+    });
+
+    const brr = [1, 2, '가', 3, '홍길동', 'ABC', 500, 'ㅋㅋㅋ'];
+    const nums = [];
+    const strs = [];
+    brr.forEach(function(elem) {
+        (typeof elem === 'number') && nums.push(elem);
+        (typeof elem === 'string') && strs.push(elem);
+    });
+
+    console.log(nums);
+    console.log(strs);
+
+}
+
+/**
+ * filter(cbFunc)
+ * - boolean반환하는 콜백함수를 전달
+ * - true를 반환한 요소만 새배열에 담아 반환
+ * - immutable
+ */
+function test8() {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const evens = arr.filter(function(n, i, _arr) {
+        console.log(n, i, _arr);
+        return n % 2 == 0;
+    });
+
+    console.log(evens);
+}
+
+/**
+ * map(cbFunc)
+ * - 요소별 연산결과를 새배열에 담아 반환 
+ * - immutable
+ */
+
+function test9() {
+    const arr = [1, 2, 3];
+    const arr2 = arr.map(function(n){
+        return n * n;
+    });
+    console.log(arr2);
+
+    // 페이지내의 버튼속 글자를 배열에 담기
+    // 1. button 배열 생성
+    // 2. map 함수를 이용해서 button태그안의 innerHTML속성값을 배열에 담아 반환
+
+    const buttons = [...document.querySelectorAll("button")];
+    const strs = buttons.map(function(button) {
+        return button.innerText;
+    });
+    console.log(strs);
+}
+
+/**
+ * reduce(callbackFunction [, initValue] )
+ * - 모든 요소를 순회해서 하나의 값을 반환
+ * - 초기값을 지정하지 않으면, 첫번째 요소가 초기값으로 사용됨.
+ */
+function test10() {
+    const arr = [1,2,3,4,5,6,7,8,9,10];
+    const sum = arr.reduce(function(agg, n, i, _arr){
+        console.log(agg, n, i, _arr);
+        return agg + n;
+    });
+    console.log(sum);
+
+    // 홀수 배열 생성
+
+    const adds = arr.reduce(function(agg, n){
+        n % 2 == 0 || agg.push(n);
+        return agg;
+    }, []);
+    console.log(adds);
+
+    // 페이지내의 버튼속 글자를 배열에 담기 - reduce
+    const texts = Array.from(document.querySelectorAll("button")).reduce(function(arr, button){
+        arr.push(button.textContent);
+        return arr;
+    }, []);
+    console.log(texts);
+}

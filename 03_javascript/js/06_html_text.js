@@ -23,7 +23,7 @@ function test2() {
 
 /**
  * outerHTML
- * - (getter) 태그자신을 포함해서 자식태그까지 반환
+ * - (getter) 태그자신을 포함해서 자식태그까지 반환i
  * - (setter) 태그자신을 교체
  */
 function test3() {
