@@ -81,6 +81,11 @@ const test2 = () => {
         // 메소드 단축문법(일반함수)
         eat(food) {
             console.log(`${this.username}이/가 ${food}를 먹는다.`);
+        },
+        work: () => {
+            // 객체안 화살표함수는 지양할것!!
+            console.log(this); // window
+            console.log(`${this.username}이/가 일한다.`); // undefined
         }
     }; 
 
@@ -90,6 +95,8 @@ const test2 = () => {
 
     user['run']();
     user['eat']('🍟');
+
+    user.work();
 };
 
 

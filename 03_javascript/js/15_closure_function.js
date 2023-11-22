@@ -1,0 +1,66 @@
+
+/**
+ * 자유변수 Free Varible
+ * - 함수 지역범위에서 선언되지 않은 변수
+ */
+const test1 = () => {
+    say('길동');
+}; 
+
+const hello = "안녕";
+
+/**
+ * 지역변수 : str1, str2, name (매개변수)
+ * 자유변수 : hello (전역변수는 아님)
+ */
+const say = (name) => {
+    const str1 = `${hello}~, ${name}`;
+    const str2 = "밥 먹었니?";
+    console.log(str1, str2);
+};
+
+/**
+ * closure 함수
+ * - 닫힘함수. 참조하는 자유변수를 가지고 외부로부터 닫힌 함수
+ * - 함수를 반환하는 과정에서 클로져함수 생성가능
+ */
+const test2 = () => {
+    const n = 20;
+    const foo2 = foo();
+    // const foo2 = () => console.log(n);
+    console.log(foo2);
+    foo2(); // 10 
+};
+
+const foo = () => {
+    const n = 10;
+    return () => console.log(n);
+};
+
+let cnt = 0;
+/**
+ * 전역카운터
+ * - cnt 변수가 어디에서나 접근이 가능하여
+ * - 값이 오염될 수 있다.(임의로 원하지 않게 변동될 수 있다.)
+ */
+const test3 = () => {
+    cnt++;
+    document.querySelector("#global-counter").innerHTML = cnt;
+};
+
+/**
+ * 클로져카운터
+ */
+// anonymous() => [[Scopes]]: Scopes[3]
+// 0: Closure (counterMaker)
+// cnt: 
+// 20
+const counterMaker = () => {
+    let cnt = 0;
+    return () => {
+        cnt++;
+        document.querySelector("#closure-counter").innerHTML = cnt;
+    };
+};
+
+const test4 = counterMaker();
