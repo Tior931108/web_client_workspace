@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | RegExp</title>
+    <style>
+        .area{
+            border:2px solid #000;
+            background-color: lightsalmon;
+            padding: 5px;
+            margin: 5px 0 10px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>RegExp</h1>
+    <button id="btn1">RegExp 객체</button>
+
+    <!-- div>button+.area -->
+    <div>
+        <button id="btn2">flags(g | i | m)</button>
+        <div class="area"></div>
+    </div>
+
+    <!-- div>button#btn3+.area -->
+    <div>
+        <button id="btn3">anchor(^ $)</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn4">임의의 문자하나</button>
+    </div>
+
+    <div>
+        <button id="btn5">문자하나목록[]</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn6">단축문자(\d \w \s)</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn7">그룹핑(), OR |</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn8">Escaping</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn9">수량자(* + ?)</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn10">수량자{}</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <button id="btn11">탐색 (?=) (?<=)</button>
+        <div class="area"></div>
+    </div>
+
+    <div>
+        <fieldset>
+            <legend>비밀번호 유효성 검사</legend>
+            <input type="text" name="password" id="password" placeholder="비밀번호를 입력하세요...">
+            <br>
+            <sub>비밀번호는 8~12자리, 숫자/영문자/특수문자(!@#$%^&*())를 각각 하나이상 포함해야 합니다.</sub>
+        </fieldset>
+    </div>
+
+    <div>
+        <fleidset>
+            <legend>@실습문제 : 주민번호 유효성 검사</legend>
+            <input type="text" name="ssn" id="ssn" placeholder="주민번호를 입력하세요.(-포함)">
+            <button id="btn-ssn">입력</button>
+        </fleidset>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="'js/23_regexp.js"></script>
+</body>
+</html>

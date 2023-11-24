@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <div>
+        <div id="sample">
+            안녕
+            <!--Hello-->
+            <span>Ni Hao</span>
+        </div>
+        <button id="btn1">태그객체의 상속구조</button>
+    </div>
+    <div>
+        <button id="btn2">Element생성 - textNode</button>
+        <button id="btn3">Element생성</button>
+        <div id="target"></div>
+    </div>
+
+    <div>
+        <button id="btn4">remove</button>
+        <button id="btn5">removeChild</button>
+
+        <!-- ul#list>li{안녕$}*5 -->
+        <ul id="list">
+            <li>안녕1</li>
+            <li>안녕2</li>
+            <li id="foo">안녕3</li>
+            <li>안녕4</li>
+            <li>안녕5</li>
+        </ul>
+    </div>
+
+    <h2>DOM Traversing</h2>
+    <div>
+        <!-- button#btn$@6*3 -->
+        <button id="btn6">자식요소 조회</button>
+        <button id="btn7">부모요소 조회</button>
+        <button id="btn8">형제요소 조회</button>
+        <button id="btn9">@실습문제 : .wrapper하위 p태그의 내용을 🚩n으로 변경하기</button>
+        <!-- div.wrapper>p#p${Helloworld$}*5 -->
+        <div class="wrapper">
+            <p id="p1">Helloworld1</p>
+            <p id="p2">Helloworld2</p>
+            <p id="p3">Helloworld3</p>
+            <p id="p4">Helloworld4</p>
+            <p id="p5">Helloworld5</p>
+        </div>
+    </div>
+
+    <script src="js/22_DOM.js"></script>
+</body>
+</html>
