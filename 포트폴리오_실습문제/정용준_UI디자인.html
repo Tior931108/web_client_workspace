@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 작성 폼</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        form {
+            width: 48%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #fileMessage {
+            margin-top: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 5px;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th , tfoot{
+            background-color:coral;
+        }
+
+        tbody tr {
+            background-color:antiquewhite;
+        }
+
+        .shortcut-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .shortcut-container span {
+            margin-right: 10px;
+        }
+
+        .shortcut-button {
+            display: inline-block;
+            padding: 6px 10px;
+            background-color: gray;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .shortcut-button:hover {
+            background-color: darkgray;
+        }
+
+        tfoot {
+            font-weight: bold;
+            margin-top: 20px;
+            background-color:coral;
+        }
+
+        .total-count {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+        <form action="insert.no" method="post" onsubmit="return validateForm()">
+            <!-- 제목 입력 -->
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" placeholder="제목을 입력하세요." required>
+            
+            <!-- 내용 입력 -->
+            <label for="content">내용:</label>
+            <textarea id="content" name="content" placeholder="내용을 입력하세요." required></textarea>
+            
+            <!-- 첨부 파일 선택 -->
+            <label for="uploadFile">첨부 파일:</label>
+            <input type="file" id="uploadFile" name="uploadFile" onchange="displaySelectedFile()">
+            <p id="fileMessage">선택된 파일 없음</p>
+            
+            <!-- 전송 버튼 -->
+            <input type="submit" value="작성 완료">
+    </fieldset>
+</form>
+<hr>
+<!-- 테이블 -->
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>9</td>
+            <td>
+                <div class="shortcut-container">
+                    <span>공지사항 제목 9</span>
+                    <a href="#" class="shortcut-button">바로가기</a>
+                </div>
+            </td>
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>
+                <div class="shortcut-container">
+                    <span>공지사항 제목 6</span>
+                    <a href="#" class="shortcut-button">바로가기</a>
+                </div>
+            </td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <div class="shortcut-container">
+                    <span>공지사항 제목 3</span>
+                    <a href="#" class="shortcut-button">바로가기</a>
+                </div>
+            </td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <div class="shortcut-container">
+                    <span>공지사항 제목 2</span>
+                    <a href="#" class="shortcut-button">바로가기</a>
+                </div>
+            </td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <div class="shortcut-container">
+                    <span>공지사항 제목 1</span>
+                    <a href="#" class="shortcut-button">바로가기</a>
+                </div>
+            </td>
+            <td>xml23</td>
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <div class="total-count">
+                    <div>전체 공지사항 갯수</div>
+                    <div>5개</div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<script>
+    function displaySelectedFile() {
+        const fileInput = document.getElementById('uploadFile');
+        const fileMessage = document.getElementById('fileMessage');
+
+        if (fileInput.files.length > 0) {
+            const fileName = fileInput.files[0].name;
+            fileMessage.innerText = '선택된 파일: ' + fileName;
+        } else {
+            fileMessage.innerText = '선택된 파일 없음';
+        }
+    }
+
+    function validateForm() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+
+        if (title.trim() === '' || content.trim() === '') {
+            alert('제목과 내용은 필수 입력사항입니다.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>

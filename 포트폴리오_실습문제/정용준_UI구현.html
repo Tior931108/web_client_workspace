@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 폼</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color:antiquewhite;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 350px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    label {
+      flex: 1;
+      display: block;
+      margin-bottom: 8px;
+      flex-basis: 30%;
+    }
+
+    input {
+      flex: 1;
+      background-color:antiquewhite;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    button {
+        background-color: lightgreen;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+
+    .underscore-placeholder {
+      flex: 1;
+      border: none;
+      border-bottom: 2px dashed #000;
+      outline: none;
+    }
+
+    .email-input {
+      display: flex;
+      gap: 4px;
+    }
+
+    .password-info {
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<form id="signupForm">
+    <div class="input-group">
+        <label for="username">
+          아이디:
+        </label>
+        <div>
+            <input type="text" id="username" name="username" class="underscore-placeholder" required>
+        </div>
+    </div>
+  
+    <div class="input-group">
+        <label for="password">
+            패스워드:
+        </label>
+        <div>
+            <input type="password" id="password" name="password" class="underscore-placeholder" required onfocus="showPasswordInfo()" onblur="hidePasswordInfo()">
+            <div class="password-info" id="passwordInfo">영문자 대/소문자, 특수문자, 숫자 포함 8~32자</div>
+        </div>
+    </div>
+  
+    <div class="input-group">
+        <label for="confirmPassword">
+            패스워드 확인:
+        </label>
+        <div>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="underscore-placeholder" required>
+        </div>
+    </div>
+  
+    <div class="input-group">
+        <label for="email">
+            이메일:
+        </label>
+        <div class="email-input">
+            <input type="text" id="emailUsername" name="emailUsername" class="underscore-placeholder" required>
+            <span>@</span>
+            <input type="text" id="emailDomain" name="emailDomain" class="underscore-placeholder" required>
+        </div>
+    </div>
+  
+    <div class="input-group">
+        <label for="address">
+            주소:
+        </label>
+        <div>
+            <input type="text" id="address" name="address" placeholder="기본주소" class="underscore-placeholder" required>
+            <input type="text" id="detailAddress" name="detailAddress" placeholder="상세주소" class="underscore-placeholder" required>
+        </div>
+    </div>
+    
+    
+    <button type="button" onclick="validateForm()">가입</button>
+
+    <div id="errorMessages" class="error-message"></div>
+  
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const emailUsername = document.getElementById('emailUsername').value;
+      const emailDomain = document.getElementById('emailDomain').value;
+      const address = document.getElementById('address').value;
+      const detailAddress = document.getElementById('detailAddress').value;
+
+      const errorMessages = document.getElementById('errorMessages');
+      errorMessages.innerHTML = '';
+
+      if (!username || !password || !confirmPassword) {
+        errorMessages.innerHTML = '아이디, 패스워드는 필수 입력 항목입니다.';
+        return;
+      }
+
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$/;
+      if (!passwordRegex.test(password)) {
+        errorMessages.innerHTML = '패스워드는 영문자 대/소문자, 특수문자, 숫자를 포함한 8~32자여야 합니다.';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorMessages.innerHTML = '패스워드와 패스워드 확인이 일치하지 않습니다.';
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(`${emailUsername}@${emailDomain}`)) {
+        errorMessages.innerHTML = '올바른 이메일 주소를 입력해주세요.';
+        return;
+      }
+
+      // 가입 성공 메시지
+      errorMessages.style.color = 'green';
+      errorMessages.innerHTML = '회원가입이 성공적으로 완료되었습니다.';
+    }
+
+    function showPasswordInfo() {
+      const passwordInfo = document.getElementById('passwordInfo');
+      passwordInfo.style.display = 'block';
+    }
+
+    function hidePasswordInfo() {
+      const passwordInfo = document.getElementById('passwordInfo');
+      passwordInfo.style.display = 'none';
+    }
+  </script>
+</form>
+
+</body>
+</html>
