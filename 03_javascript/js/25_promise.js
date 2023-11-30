@@ -1,10 +1,12 @@
 
 /**
  * Promise
- * - 비동기작업(producing code)1 + 콜백(consuming code)를 명쾌히 작성하는 문법
+ * - 비동기작업(producing code) + 콜백(consuming code)를 명쾌히 작성하는 문법
+ * 
  * - Promise 객체는 status/result 상태값을 가진다.
  *  - status : pending(대기중..) -> fulfilled(정상) | rejected(오류)
  *  - result : undefined -> value | error 객체
+ * 
  * - Promise 객체는 두개의 callback함수를 가진다.
  *  - resolve : 정상처리된 경우 호출하는 콜백
  *  - reject : 오류가 발생한 경우 호출하는 콜백

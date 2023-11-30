@@ -71,8 +71,8 @@ document.querySelector('#btn5').addEventListener('click', async () => {
 });
 
 /**
- * avatar 이미지 출력
- * - async, await 활용 
+ * avatar 이미지 출력 , 3초후에 제거
+ * - async, await 활용
  */
 document.querySelector('#btn6').addEventListener('click', async () => {
     const url = 'https://api.github.com/users/Tior931108';
