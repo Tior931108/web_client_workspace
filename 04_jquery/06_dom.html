@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery | DOM</title>
+  <style>
+    table {
+      border: 1px solid #000;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+    .wrap * {
+			border: 1px solid lightgray;
+			display: block; /*생략하지 말것. 모든 글자 */
+			padding: 5px;
+			margin: 15px;
+			color: gray;
+		}
+		.type {
+			width: 500px;
+		}
+  </style>
+</head>
+
+<body>
+  <h1>DOM</h1>
+  <button id="btn1">요소추가</button>
+  <div id="area1"></div>
+
+  <div>
+    <h2>삽입</h2>
+    <h3 id="target"><strong>A</strong></h3>
+
+    <p>기존요소 기준으로 메소드 호출</p>
+    <!-- button#btn$@2*4 -->
+    <button id="btn2">append</button>
+    <button id="btn3">prepend</button>
+    <button id="btn4">after</button>
+    <button id="btn5">before</button>
+
+    <p>새요소 기준으로 메소드 호출</p>
+    <!-- button#btn$@2*4 -->
+    <button id="btn6">appendTo</button>
+    <button id="btn7">prependTo</button>
+    <button id="btn8">insertAfter</button>
+    <button id="btn9">insertBefore</button>
+  </div>
+
+  <button id="btn10">데이터추가</button>
+  <table id="tb-product">
+    <thead>
+      <tr>
+        <th>상품명</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>DOM Traversing</h2>
+  <!-- button#btn$@11*3 -->
+  <button id="btn11">부모</button>
+  <button id="btn12">자식</button>
+  <button id="btn14">@실습문제 - li2-2 찾기</button>
+
+  <div class="wrap">
+    <div class="type">div.type (great-grandparent)
+      <ul>ul (grandparent)
+        <li>li (direct parent)
+          <span>span1</span>
+        </li>
+        <li>li (direct parent)
+          <span>span2</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="type">div.type (grandparent)
+      <p>p (direct parent)
+        <span>span3</span>
+      </p>
+    </div>
+
+    <!-- @실습문제 -->
+		<div class="type test">
+			div.test
+			<ul>
+				ul1
+				<li>li1-1</li>
+				<li>
+					li1-2
+					<ul>
+						ul2
+						<li>li2-1</li>
+						<li>li2-2</li>
+						<li>
+							li2-3
+							<ul>
+								ul3
+								<li>
+									li3
+									<span id="fromMe">fromMe</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+  </div>
+  
+  <button id="btn13">형제</button>
+  <div class="container">
+		<p>p</p>
+		<span>span</span>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<p>p</p>
+	</div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <script src="js/jquery-3.7.1.js"></script>
+  <script src="js/06_dom.js"></script>
+</body>
+
+</html>

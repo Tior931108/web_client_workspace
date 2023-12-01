@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS</title>
+</head>
+<body>
+  <h1>@실습문제 : 배열</h1>
+  <button onclick="test1();">1</button>
+  <button onclick="test2();">2</button>
+  <button onclick="test3();">3</button>
+  
+  <script>
+  function test1() {
+    const str = prompt(
+      "좋아하는 영화를 입력하세요.(입력예: 쇼생크탈출, 까모메식당, 본아이덴티티)"
+    );
+    
+    if (str == null) 
+      return;
+    
+    const arr = str.split(", ");
+    arr.sort();
+
+    alert(arr); 
+  }
+
+  function test2() {
+    /*
+      '빨','주','노','초','파','남','보'
+      '주','노','초','파','남','보','빨'
+      '노','초','파','남','보','빨','주'
+      '초','파','남','보','빨','주','노'
+      '파','남','보','빨','주','노','초'
+      '남','보','빨','주','노','초','파'
+      '보','빨','주','노','초','파','남'
+    */
+    const rainbow = ["빨", "주", "노", "초", "파", "남", "보"];
+    for (let i = 0; i < rainbow.length; i++) {
+      console.log(rainbow.toString());
+      // shift - 0번지 요소 제거
+      // push - 마지막요소로 추가
+      rainbow.push(rainbow.shift());
+    }
+  }
+
+  function test3() {
+    const arr = [];
+    let k = 1;
+    while (true) {
+      arr.push(k++);
+      if (k > 100) break;
+    }
+
+    //arr의 마지막요소부터 제거해서 모든 요소를 copy에 옮겨담기
+    //[100, 99, 98,...., 3, 2, 1]
+    const copy = [];
+
+    // arr.length = 0 일때 false로 평가된다.
+    while(arr.length) {
+      copy.push(arr.pop());
+    }
+    console.log(arr); // []
+    console.log(copy); // [100, 99, 98,...., 3, 2, 1]
+  }
+  </script>
+</body>
+</html>

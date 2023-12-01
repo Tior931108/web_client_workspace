@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>저를 확인하세요😎</title>
+</head>
+<body>
+  <h1>저를 확인하세요😎</h1>
+  <input type="checkbox" id="popup_checked">
+  <label for="popup_checked">확인했음</label>
+  <script>
+  popup_checked.onchange = () => {
+    this.close();
+    localStorage.setItem('POPUP_CHECKED', true);
+  };
+  </script>
+</body>
+</html

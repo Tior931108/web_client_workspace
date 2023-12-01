@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS | DOM에 접근하기</title>
+</head>
+<body>
+  <h1>DOM에 접근하기</h1>
+  <!-- ul>li#li$.group1*5 -->
+  <button onclick="getById()">id</button>
+  <button onclick="getByTag()">tag</button>
+  <button onclick="getByClass()">class</button>
+  <button onclick="_querySelector()">querySelector</button>
+  <button onclick="_querySelectorAll()">querySelectorAll</button>
+  <ul>
+    <li id="li1" class="group1">Hello JS 1</li>
+    <li id="li2" class="group2">Hello JS 2</li>
+    <li id="li3" class="group1">Hello JS 3</li>
+    <li id="li4" class="group2">Hello JS 4</li>
+    <li id="li5" class="group1 group2">Hello JS 5</li>
+  </ul>
+
+  <form action="">
+    <fieldset>
+      <legend>취미 선택</legend>
+      <!-- div>label+input:checkbox -->
+      <div>
+        <label for="hobby-basketball">농구</label><input type="checkbox" name="hobby" id="hobby-basketball" value="농구">
+        <label for="hobby-soccer">축구</label><input type="checkbox" name="hobby" id="hobby-soccer" value="축구">
+        <label for="hobby-baseball">야구</label><input type="checkbox" name="hobby" id="hobby-baseball" value="야구">
+      </div>
+      <div>
+        <button type="button" onclick="getByName();">선택 확인</button>
+        <label for="all">모두선택</label>
+        <input type="checkbox" id="all" onchange="checkAll();">
+      </div>
+    </fieldset>
+  </form>
+
+  <fieldset>
+    <legend>@실습문제 : input태그 사용자입력값 출력하기</legend>
+    <label for="name">이름</label>
+    <input type="text" name="name" id="name" class="user-input" value="홍길동" >
+    <button type="button" onclick="test1();">확인</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>@실습문제 : 점수입력</legend>
+    <!-- onchange / oninput-->
+    <input 
+      type="range" name="score" id="score" class="user-input" 
+      min="0" max="100" oninput="test2();">
+    <span id="display-score">33</span>점
+  </fieldset>
+
+  <script src="js/03_access_dom.js"></script>
+</body>
+</html>

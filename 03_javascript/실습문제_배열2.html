@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@실습문제 | 배열2</title>
+  <style>
+  table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    border: 1px solid #000;
+    padding: 5px;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <button onclick="test1();">1</button>
+  </div>
+  <ul id="drink">
+    <li>coffee</li>
+    <li>cocktail</li>
+    <li>juice</li>
+    <li>beer</li>
+    <li>whiskey</li>
+  </ul>
+
+  <div>
+    <button onclick="test2();">2</button>
+    <button onclick="sortContactByName('asc')">이름 오름차순</button>
+    <button onclick="sortContactByName('desc')">이름 내림차순</button>
+    <button onclick="sortContactByAge('asc')">나이 오름차순</button>
+    <button onclick="sortContactByAge('desc')">나이 내림차순</button>
+  </div>
+  <table id="contact">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>전화번호</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+  /**
+   * #drink 하위의 li태그의 text를 배열로 만들기
+   * 유사배열은 다른 메소드 map, reduce등은 사용할수 없지만, forEach는 가능하다.
+   */
+   function test1() {
+    let arr = Array.from(document.querySelectorAll("#drink > li")).map(
+      (elem) => elem.textContent.toUpperCase()
+    );
+    console.log(arr);
+  }
+  /**
+   * @실습문제 - 연락처 
+   * - 제공된 csv데이터를 처리하여 table#contact에 렌더하기 
+   * <tr>
+   *  <td>김지영</td>
+   *  <td>25</td>
+   *  <td>010-1234-5678</td>
+   * </tr>
+   */
+  function test2() {
+    const data = `김지영,25,010-1234-5678
+박준호,32,010-9876-5432
+이민지,28,010-5555-5555
+정승훈,45,010-1111-2222
+최현우,19,010-7777-8888
+장수민,37,010-4444-3333
+송지원,31,010-8888-9999
+이도현,26,010-2222-1111
+신영주,42,010-6666-7777
+강현우,23,010-3333-4444
+김지현,29,010-9999-8888
+이승희,35,010-4444-5555
+박동진,41,010-2222-3333
+최진우,20,010-7777-6666
+장윤서,27,010-5555-4444`;
+
+    const tbody = document.querySelector("table#contact tbody");
+    tbody.innerHTML = ""; // 초기화
+
+    const arr = data.split('\n');
+    console.log(arr);
+
+
+    arr.forEach(function(text){
+      const infos = text.split(',');
+      
+      const name = infos[0];
+      const age = infos[1];
+      const tel = infos[2];
+
+      const tr = `
+        <tr>
+          <td>${name}</td>
+          <td>${age}</td>
+          <td>${tel}</td>
+        </tr> 
+      `;
+      tbody.innerHTML += tr;
+    })
+  }
+
+  function sortContactByAge(type) {
+    const trs = Array.from(document.querySelectorAll("table#contact tbody tr"));
+    
+    const compareFunction = 
+      type === 'asc' ? 
+        function(tr1, tr2){
+          // 해당태그의 자식/후손태그 중에 가져오기
+          const age1 = tr1.querySelector("td:nth-child(2)").innerText;
+          const age2 = tr2.querySelector("td:nth-child(2)").innerText;
+          return age1 - age2;
+        } : 
+          function(tr1, tr2){
+            const age1 = tr1.querySelector("td:nth-child(2)").innerText;
+            const age2 = tr2.querySelector("td:nth-child(2)").innerText;
+            return age2 - age1;
+          };
+    trs.sort(compareFunction);
+    trs.forEach(function(tr) {
+      // 마지막 자식요소로 추가
+      document.querySelector("table#contact tbody").append(tr);
+    });
+  }
+
+  function sortContactByName(type) {
+    const trs = Array.from(document.querySelectorAll("table#contact tbody tr"));
+    console.log(trs);
+
+    let compareFunction;
+    if(type === 'asc') {
+      // 이름 오름차순
+      compareFunction = function(tr1, tr2){
+        const name1 = tr1.querySelector("td:first-child").innerText;
+        const name2 = tr2.querySelector("td:first-child").innerText;
+        if(name1 > name2) return 1;
+        if(name1 < name2) return -1;
+        return 0;
+      };
+    }
+    else {
+      // 이름 내림차순
+      compareFunction = function(tr1, tr2){
+        const name1 = tr1.querySelector("td:first-child").innerText;
+        const name2 = tr2.querySelector("td:first-child").innerText;
+        if(name1 > name2) return -1;
+        if(name1 < name2) return 1;
+        return 0;
+      };
+    }
+    trs.sort(compareFunction);
+
+    // DOM tree 구조
+    trs.forEach(function(tr) {
+      document.querySelector("table#contact tbody").append(tr);
+    });
+
+  }
+  </script>
+  
+  
+</body>
+</html>

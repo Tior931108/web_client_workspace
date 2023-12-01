@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery | CSS</title>
+  <style>
+  div.menu {
+    width:300px;
+    height:30px;
+    background:yellowgreen;
+    color:orangered;
+    border-radius:10px;
+    text-align:center;
+    border:1px solid green;
+    cursor:pointer;
+  }
+  p.content {
+    border:1px solid lightgray;
+    width:300px;
+    height:200px;
+    display:none;
+  }
+  .wrapper {
+    margin-top: 50px;
+    width: 300px;
+    height: 200px;
+    padding: 5px;
+    overflow: hidden;
+  }
+  #flower2 {
+    width: 100%;
+    opacity: .5;
+  }
+  </style>
+  
+</head>
+<body>
+  <h1>CSS</h1>
+  <div>
+    <img id="river1" src="../sample/image/river1.PNG" alt="">
+  </div>
+  <button id="btn1">show</button>
+  <button id="btn2">hide</button>
+  
+  <div class="wrapper">
+    <div class="menu">첫 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">두 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">세 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">네 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">다섯 번째 메뉴</div>
+    <p class="content">내용</p>
+  </div>
+  <!-- button#btn$@3*2 -->
+  <button id="btn3">slideDown</button>
+  <button id="btn4">slideUp</button>
+
+  <div class="wrapper" style="height: 100px">
+    <img src="../sample/image/flower1.PNG" alt="" id="flower1" style="height: 100%;">
+  </div>
+  <!-- button#btn$@5*2 -->
+  <button id="btn5">fadeIn</button>
+  <button id="btn6">fadeOut</button>
+
+  <div class="wrapper">
+    <img src="../sample/image/flower2.PNG" id="flower2" alt="">
+  </div>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <script src="js/jquery-3.7.1.js"></script>
+  <script src="js/09_css.js.js"></script>
+</body>
+</html>

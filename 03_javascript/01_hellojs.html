@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS | Hello JS</title>
-    <!-- <script src="js/01_hellojs.js"></script> -->
-    <script>
-        // 두번째 좋은 위치
-        console.log(1234);
-        
-        // bar();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS | Hello JS</title>
+  <!-- <script src="js/01_hellojs.js"></script> -->
+  <script>
+    // 두번째 좋은 위치
+    console.log(1234);
+    
+    // bar();
+  </script>
+  
 </head>
 <body>
-    <h1>Hello JS</h1>
-    <!--
-        js는 웹페이지내에서 동적인 부분(사용자상호작용, 이벤트처리, 외부서비스 이용)을 담당하는 언어
-        Brandon Eich가 기존 Lisp언어를 베이스로 10일만에 작성한 언어
-        언어적 이슈가 있지만 계속 대응하며 발전시켜왔음.
-        node라는 런타임을 사용해서 브라우저가 아닌 서버/네이티브 환경에서 실행이 가능
-        유연한 문법으로 배우기에 쉬운편.
-        Mocha, Livescript 이름을 사용하다가, 트렌드와 자바와 비슷한 이름인 자바스크립트로 확정.
-        C/C++로 제작된 언어이므로, java와 비슷한 부분도 많다.
-    -->
-    <h2>js사용하는 3가지 방법</h2>
-    <ol>
-        <li>
-            태그의 이벤트속성(onxxx)에 작성하기
-            <button onclick="alert('🍔🍔🍔');">클릭</button>
-        </li>
-        <li>
-            html페이지에 script태그를 통해 작성하기
-            <button onclick="foo();">클릭</button>
-        </li>
-        <li>
-            외부 js파일을 로드해서 실행
-            <button onclick="bar();">클릭</button>
-        </li>
-    </ol>
+  <h1>Hello JS</h1>
+  <!-- 
+    js는 웹페이지내에서 동적인 부분(사용자상호작용, 이벤트처리, 외부서비스 이용)을 담당하는 언어 
+    Brandon Eich가 기존 Lisp언어를 베이스 10일만에 작성한 언어. 
+    언어적 이슈가 있지만 계속 대응하면 발전시켜왔음.
+    node라는 런타임을 사용해서 브라우져가 아닌 서버/네이티브 환경에서 실행이 가능.
+    유연한 문법으로 배우기에 쉬운편.
+    Mocha, Livescript 이름을 사용하다가, 트렌드와 자바와 비슷한 이름 자바스크립트로 확정.
+    C/C++로 제작된 언어이므로, java와 비슷한 부분도 많다.
+  -->  
+  <h2>js사용하는 3가지 방법</h2>
+  <ol>
+    <li>
+      태그의 이벤트속성(onxxx)에 작성하기
+      <button onclick="alert('🍕🍕🍕'); alert('😁😁😁')">클릭</button>
+    </li>
+    <li>
+      html페이지에 script태그를 통해 작성하기
+      <button onclick="foo();">클릭</button>
+    </li>
+    <li>
+      외부 js파일을 로드해서 실행
+      <button onclick="bar();">클릭</button>
+    </li>
+  </ol>
 
-    <script src="js/01_hellojs.js"></script>
-    <script>
-    // 첫번째 좋은 위치 (DOM Tree 구성 완료후 실행)
-    console.log(5678);
 
-    // 함수 선언
-    function foo() {
-        console.log('🍔🍔🍔');
-    }
+  <script src="js/01_hellojs.js"></script>
+  <script>
+  // 첫번째 좋은 위치 (DOM Tree 구성 완료후 실행)
+  console.log(5678);
 
-    bar();
-    </script>
+  // 함수 선언
+  function foo() {
+    console.log('🍔🍔🍔');
+  }
+
+  bar();
+  </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@실습문제 | 비동기</title>
+  <style>
+    .img-wrapper {
+      padding: 3px;
+      width: 300px; 
+      height: 300px; 
+      margin: 10px 0;
+    }
+    .img-wrapper img{
+      margin: 10px;
+      border-radius: 50%;
+      width: 100%;
+      box-shadow : 5px 5px 10px 5px lightgray;
+      transition-duration: .3s;
+    }
+    .img-wrapper img:hover{
+      box-shadow : 5px 5px 10px 5px gray;
+    }
+    </style>
+</head>
+<body>
+  <h1>Axios</h1>
+  <button id="btn">랜덤 강아지 예제</button>
+  <div class="img-wrapper" ></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    document.querySelector("#btn").addEventListener('click', (e) => {
+    const url = 'https://dog.ceo/api/breeds/image/random';
+    axios.get(url)
+      .then(({data: {message : imgURL}}) =>{
+        const dogImage = document.createElement("img");
+        dogImage.src = imgURL; // <img src="..." />
+        const wrapper = document.querySelector(".img-wrapper");
+        wrapper.innerHTML = ""; // 초기화
+        wrapper.append(dogImage);
+      });
+  })
+  </script>
+</body>
+</html>

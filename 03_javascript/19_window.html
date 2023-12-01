@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS | Window</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS | Window</title>
 </head>
 <body>
-    <h1>Window <span id="clock-display" style="color: red;"></span></h1>
-    <button onclick="test1();">window</button>
-    <button onclick="test2();">open</button>
-    <button onclick="test3();">Timer API - setTimeout</button>
-    <button onclick="test4();">Timer API - setInterval</button>
-    <button onclick="clearInterval(intervalId)">인터벌중지</button>
+  <h1>Window <span id="clock-display" style="color: red"></span></h1>
+  <button onclick="test1();">window</button>
+  <button onclick="test2();">open</button>
+  <button onclick="test3();">Timer API - setTimeout</button>
+  <button onclick="test4();">Timer API - setInterval</button>
+  <button onclick="clearInterval(intervalId)">인터벌중지</button>
 
-    <div>
-        <fieldset>
-            <legend>타이머 설정</legend>
-            <input type="text" id="message" placeholder="메세지를 입력하세요...">
-            <input type="number" id="sec" placeholder="시각(초)을 설정하세요...">
-            <button onclick="test5();">저장</button>
-            <button onclick="test6();">취소</button>
-        </fieldset>
-    </div>
+  <div>
+    <fieldset>
+      <legend>타이머 설정</legend>
+      <input type="text" id="message" placeholder="메세지를 입력하세요..." value="🥗🥗🥗">
+      <input type="number" id="sec" placeholder="시각(초)을 설정하세요..." value="3">
+      <button onclick="test5();">저장</button>
+      <button onclick="test6();">취소</button>
+    </fieldset>
+  </div>
 
-    <script src="js/19_window.js"></script>
+  <script src="js/19_window.js"></script>
 </body>
 </html>
