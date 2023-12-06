@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailwindCSS | Responsive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+</head>
+<body>
+  <h1 class="text-3xl my-4">Responsive</h1>
+
+  <!-- 
+    css @media 쿼리 : 기기의 width값이 근거해서 다른 css를 적용
+    - 기본값 : ~ 640px
+    - sm: 640px ~ 
+    - md: 768px ~
+    - lg: 1024px ~
+    - xl: 1280px ~
+    - 2xl: 1536px ~ 
+  -->
+  <div class="w-10/12 h-96 mx-auto bg-slate-400 sm:bg-red-400 md:bg-yellow-400 lg:bg-green-400"></div>
+</body>
+</html>

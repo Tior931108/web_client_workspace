@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailwindCSS | Flexbox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+</head>
+<body>
+  <h1 class="text-3xl my-4">Flexbox</h1>
+  <!-- ul>li{$}*10 -->
+  <!-- 
+    flex
+    flex-(row | col) -> flex-direction
+    justify-(start | end | center | between | evenly | around) -> justify-content(메인축)
+    items-(stretch | start | end | center) -> align-items(크로스축)
+    flex-(nowrap | wrap) -> flex-wrap
+    content-(start | end | center | between | evenly | around) -> align-content(크로스축 - 멀티축)
+  -->
+
+  <ul class="bg-orange-300 h-[300px] flex flex-wrap justify-center items-center content-center">
+    <li class="border border-black p-4 bg-[#ff4500] w-20">1</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">2</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">3</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">4</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">5</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">6</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">7</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">8</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">9</li>
+    <li class="border border-black p-4 bg-[#ff4500] w-20">10</li>
+  </ul>
+  
+</body>
+</html>

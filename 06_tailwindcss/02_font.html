@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailwindCSS | Font</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+</head>
+<body>
+  <h1 class="text-3xl my-4">Font</h1>
+
+  <!-- h${HelloWorld}*6 -->
+  <h1 class="text-3xl">HelloWorld</h1>
+  <h2 class="text-2xl">HelloWorld</h2>
+  <h3 class="text-xl">HelloWorld</h3>
+  <h4 class="text-lg">HelloWorld</h4>
+  <h5 class="text-base">HelloWorld</h5> <!--16px-->
+  <h6 class="text-sm">HelloWorld</h6>
+  <p class="text-[20px]">HelloWorld</p>
+  
+  <!-- div>p{ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사}*5 -->
+  <div class="my-4">
+    <p class="text-3xl font-serif">ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사</p>
+    <p class="text-3xl font-sans">ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사</p>
+    <p class="text-3xl font-mono">ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사</p>
+    <p class="text-3xl font-['궁서']">ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사</p>
+    <p class="text-3xl font-['Dongle']">ABCDEFGHIJKLMN opqrstuvwsxyz 0123456789 가나다라마바사</p>
+  </div>
+</body>
+</html>
